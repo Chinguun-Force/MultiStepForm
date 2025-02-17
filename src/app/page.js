@@ -1,4 +1,5 @@
 'use client'
+import Button from "@/components/Button";
 import MyInput from "@/components/MyInput";
 import { useState } from "react";
 
@@ -16,20 +17,28 @@ export default function Home() {
   });
   const StepOne = () => {
     return(
-      <div>
-        <MyInput/>
-        <MyInput/>
-        <MyInput/>
+      <div className="space-y-3">
+        <MyInput type = "firstName"/>
+        <MyInput type = "lastName"/>
+        <MyInput type = "userName"/>
       </div>
     )
   }
   const StepTwo = () => {
     return(
-      <div>
-        <MyInput/>
-        <MyInput/>
-        <MyInput/>
-        <MyInput/>
+      <div className="space-y-3">
+        <MyInput type = "eMail"/>
+        <MyInput type = "phoneNumber"/>
+        <MyInput type = "password"/>
+        <MyInput type = "rePassword"/>
+      </div>
+    )
+  }
+  const StepThree = () => {
+    return(
+      <div className="space-y-3">
+        <MyInput type = "dob"/>
+        <MyInput type = "file"/>
       </div>
     )
   }
@@ -45,6 +54,7 @@ export default function Home() {
         <span className="text-lg text-[#8E8E8E] font-semibold">Please provide all current information accurately.</span>
       </div>
         {Steps[0]}
+        <Button/>
     </div>
   );
 }
