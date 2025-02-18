@@ -4,6 +4,7 @@ import MyInput from "@/components/MyInput";
 import { useState } from "react";
 
 export default function Home() {
+  const [currentStep, setCurrentStep] = useState(0)
   const [myFormValue, setMyFormValue] = useState({
     firstName: "",
     lastName: "",
@@ -18,31 +19,31 @@ export default function Home() {
   const StepOne = () => {
     return(
       <div className="space-y-3">
-        <MyInput type = "firstName"/>
-        <MyInput type = "lastName"/>
-        <MyInput type = "userName"/>
+        <MyInput name = "firstName"/>
+        <MyInput name = "lastName"/>
+        <MyInput name = "userName"/>
       </div>
     )
   }
   const StepTwo = () => {
     return(
       <div className="space-y-3">
-        <MyInput type = "eMail"/>
-        <MyInput type = "phoneNumber"/>
-        <MyInput type = "password"/>
-        <MyInput type = "rePassword"/>
+        <MyInput name = "eMail"/>
+        <MyInput name = "phoneNumber"/>
+        <MyInput name = "password"/>
+        <MyInput name = "rePassword"/>
       </div>
     )
   }
   const StepThree = () => {
     return(
       <div className="space-y-3">
-        <MyInput type = "dob"/>
-        <MyInput type = "file"/>
+        <MyInput name = "dob"/>
+        <MyInput name = "file"/>
       </div>
     )
   }
-  const Steps = [<StepOne/>, <StepTwo/>]
+  const steps = [<StepOne/>, <StepTwo/>, <StepThree/>]
   return (
     <div className="bg-white rounded-xl p-8 h-[655px] shadow-lg">
       <div className="flex flex-col gap-2 mb-7">
@@ -53,8 +54,8 @@ export default function Home() {
         <h1 className="text-2xl font-bold">Join Us! 😎</h1>
         <span className="text-lg text-[#8E8E8E] font-semibold">Please provide all current information accurately.</span>
       </div>
-        {Steps[0]}
-        <Button/>
+        {steps[currentStep]}
+        <Button stepsLength = {steps.length} currentStep = {currentStep} setCurrentStep = {setCurrentStep}/>
     </div>
   );
 }
