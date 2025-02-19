@@ -21,7 +21,7 @@ const Button = (props) => {
                     Back
                 </button>
             )}
-            <button className={`${props.currentStep != 0 ? "w-full" : "w-full"} ${props.currentStep != props.stepsLength-1 ? `after:content-[">"]` : ""} py-2.5 rounded-lg bg-[#121316]`}
+            <button className={`${props.currentStep != 0 ? "w-full" : "w-full"} ${props.currentStep != props.stepsLength-1 ? `after:content-['']` : ""} py-2.5 rounded-lg bg-[#121316]`}
                 onClick={nextStep}
             >
                 {props.currentStep != props.stepsLength-1 ? `Continue ${props.currentStep + 1}/${props.stepsLength}` : "Submit"}

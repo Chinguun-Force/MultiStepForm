@@ -1,7 +1,9 @@
 'use client'
 import Button from "@/components/Button";
 import MyInput from "@/components/MyInput";
+import MyForm from "@/components/Tetso";
 import { useState } from "react";
+
 
 export default function Home() {
   const [currentStep, setCurrentStep] = useState(0)
@@ -56,6 +58,7 @@ export default function Home() {
       </div>
         {steps[currentStep]}
         <Button stepsLength = {steps.length} currentStep = {currentStep} setCurrentStep = {setCurrentStep}/>
+        <MyForm/>
     </div>
   );
 }
